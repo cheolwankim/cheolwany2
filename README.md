@@ -71,17 +71,18 @@
 ![7](https://user-images.githubusercontent.com/105213482/224284640-eeb28888-8384-48b8-8356-6277b7e74c35.png)
 <br>
 ![8](https://user-images.githubusercontent.com/105213482/224284645-59002df2-643d-4d93-9f10-dd5c109d7f2d.png)
-<br>
+<br><br>
 
   애니메이터는 말 그대로 해당하는 애니메이션 및 동작들을 설정했던 것이지만 C# 스크립트는 코딩을 통해 좀 더 내부적인 동작들을 설정하는 것이다. 예를 들면 보스의 특수 행동을 어느 시점에 하는지와 체력 등에 대한 설정, 총알이 벽에 부딪히면 없어지는 등을 설정하는 것이다. 
-<br>
+<br><br>
   위 그림의 Jump()를 통해 스크립트들이 어떤 형식으로 이루어지는 단편적으로 알아보려 한다. 먼저 Jump 함수의 구성이다.
 
 ![9](https://user-images.githubusercontent.com/105213482/224284648-c0c6b72c-2ee0-4af1-98aa-9d795e940326.png)
-<br>
+<br><br>
   해당 코드의 조건문을 살펴보면 Jump는 jDown 점프키가 눌렸을 때 Vector3.zero Z축이 0이면 다시말해 바닥에 플레이어가 붙어있으면 실행된다. 또한 플레이어가 점프중(isJump) 이거나 회피중(isDodge) 이거나 무기교체중(isSwap) 이거나 죽은상태(isDead) 가 아니어야(! = not) 점프가 실행된다. 실행된다면 플레이어를 힘 모드는 즉발이고 15만큼 Z축으로 올라가게 하며 플레이어 상태를 점프중(isJump) 으로 바꾼다. 또한 설정된 애니메이션인 doJump를 실행하도록 한다.
-<br>
+<br><br>
 ![10](https://user-images.githubusercontent.com/105213482/224284651-d951d129-e90b-4344-a7a8-8795f43d94c6.png)
-<br>
+<br><br>
   앞서 기술한 jDown은 GetButtonDown함수를 이용해 해당하는 키가 눌렸을 때 실행되도록 설정할 수 있다. 물론 다른 키들도 이곳에서 설정해서 활용하는 것이다. 이 함수는 Player.cs 스크립트 안에 포함 되어있으며 플레이어에 관련한 것들은 이 스크립트 안에 포함되어 있다.
 
+<br><br>
